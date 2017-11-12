@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zy.bbpgame.MainActivity">
+
+    <!--<com.zy.bbpgame.view.OneNumberView-->
+        <!--android:id="@+id/nbview"-->
+        <!--app:status="state_1"-->
+        <!--app:isDevelop="false"-->
+        <!--app:isPre="true"-->
+        <!--android:layout_width="20dp"-->
+        <!--android:layout_height="20dp"/>-->
+
+    <!--<com.zy.bbpgame.view.OneNumberView-->
+        <!--android:id="@+id/nbview1"-->
+        <!--app:status="state_null"-->
+        <!--app:isDevelop="true"-->
+        <!--app:isPre="false"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"/>-->
+
+    <!--<com.zy.bbpgame.view.OneNumberView-->
+        <!--android:id="@+id/nbview2"-->
+        <!--app:status="state_0"-->
+        <!--app:isDevelop="false"-->
+        <!--app:isPre="false"-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="80dp"/>-->
+
+    <com.zy.bbpgame.view.NumberGridLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
