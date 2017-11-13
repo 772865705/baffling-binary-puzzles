@@ -21,13 +21,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final NumberGridLayout gridLayout = findViewById(R.id.grid);
-        gridLayout.setColumnCount(10);
-        gridLayout.setRowCount(10);
 //        gridLayout.fillAll();
         gridLayout.postDelayed(new Runnable() {
             @Override
             public void run() {
-                gridLayout.fillAll();
+                gridLayout.fillAll(5,8);
             }
         },120);
 

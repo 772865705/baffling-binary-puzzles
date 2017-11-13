@@ -2,6 +2,7 @@ package com.zy.bbpgame.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
@@ -10,6 +11,8 @@ import android.widget.GridLayout;
  * Created by ZhaoYue on 2017/11/12.
  */
 public class NumberGridLayout extends GridLayout {
+    private static final String TAG = "NumberGridLayout";
+
     public NumberGridLayout(Context context) {
         this(context, null);
     }
@@ -26,12 +29,19 @@ public class NumberGridLayout extends GridLayout {
         super(context, attrs, defStyleAttr);
     }
 
+    public void fillAll(int rowCount,int columnCount){
+        setRowCount(rowCount);
+        setColumnCount(columnCount);
+        fillAll();
+    }
+
     public void fillAll() {
         removeAllViews();
         for (int i = 0; i < getColumnCount() * getRowCount(); i++) {
             OneNumberView one = new OneNumberView(getContext());
 //            addView(one,-1);
-            addView(one, getWidth()/getRowCount(),getHeight()/getColumnCount());
+            Log.i(TAG, "fillAll: i:" + i);
+            addView(one, getWidth()/getColumnCount(),getHeight()/getRowCount());
         }
         requestLayout();
     }
@@ -57,8 +67,8 @@ public class NumberGridLayout extends GridLayout {
 //            one.requestLayout();
 //            measureChild(one,MeasureSpec.AT_MOST,MeasureSpec.AT_MOST);
 //        }
-        if (getChildCount() == 0 && w>0&&h>0){
-            fillAll();
-        }
+//        if (getChildCount() == 0 && w>0&&h>0){
+//            fillAll();
+//        }
     }
 }
