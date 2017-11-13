@@ -43,7 +43,7 @@ public class NumberGridLayout extends GridLayout {
             Log.i(TAG, "fillAll: i:" + i);
             addView(one, getWidth()/getColumnCount(),getHeight()/getRowCount());
         }
-        requestLayout();
+//        requestLayout();
     }
 
     @Override
