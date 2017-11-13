@@ -30,8 +30,8 @@ public class NumberGridLayout extends GridLayout {
         removeAllViews();
         for (int i = 0; i < getColumnCount() * getRowCount(); i++) {
             OneNumberView one = new OneNumberView(getContext());
-            addView(one,-1);
-//            addView(one, getWidth()/getRowCount(),getHeight()/getColumnCount());
+//            addView(one,-1);
+            addView(one, getWidth()/getRowCount(),getHeight()/getColumnCount());
         }
         requestLayout();
     }
@@ -44,18 +44,21 @@ public class NumberGridLayout extends GridLayout {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        int cw = getMeasuredWidth()/getRowCount();
-        int ch = getMeasuredHeight()/getColumnCount();
-
-        int childCount = getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            params.width = 0;
-            params.height = ch;
-            OneNumberView one = (OneNumberView) getChildAt(i);
-            one.setLayoutParams(params);
-            one.requestLayout();
-            measureChild(one,MeasureSpec.AT_MOST,MeasureSpec.AT_MOST);
+//        int cw = getMeasuredWidth()/getRowCount();
+//        int ch = getMeasuredHeight()/getColumnCount();
+//
+//        int childCount = getChildCount();
+//        for (int i = 0; i < childCount; i++) {
+//            GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+//            params.width = 0;
+//            params.height = ch;
+//            OneNumberView one = (OneNumberView) getChildAt(i);
+//            one.setLayoutParams(params);
+//            one.requestLayout();
+//            measureChild(one,MeasureSpec.AT_MOST,MeasureSpec.AT_MOST);
+//        }
+        if (getChildCount() == 0 && w>0&&h>0){
+            fillAll();
         }
     }
 }

@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
         final NumberGridLayout gridLayout = findViewById(R.id.grid);
         gridLayout.setColumnCount(10);
         gridLayout.setRowCount(10);
-        gridLayout.fillAll();
-//        gridLayout.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                gridLayout.fillAll();
-//            }
-//        },120);
+//        gridLayout.fillAll();
+        gridLayout.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                gridLayout.fillAll();
+            }
+        },120);
 
 //        nbview = findViewById(R.id.nbview);
 
