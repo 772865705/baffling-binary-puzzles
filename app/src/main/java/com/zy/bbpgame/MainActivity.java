@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         gridLayout.postDelayed(new Runnable() {
             @Override
             public void run() {
-                gridLayout.fillAll(5,8);
+                gridLayout.fillAll(6,8);
             }
         },120);
 

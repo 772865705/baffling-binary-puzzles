@@ -45,6 +45,8 @@ public class OneNumberView extends View implements View.OnClickListener, View.On
         setOnClickListener(this);
         setOnLongClickListener(this);
         mPaint = new Paint();
+        setPressed(true);
+        setBackgroundResource(R.drawable.sel_bg_single);
     }
 
     private void initAttr(@NonNull AttributeSet attrs) {
@@ -127,6 +129,18 @@ public class OneNumberView extends View implements View.OnClickListener, View.On
                 break;
         }
         invalidate();
+        if (stateChangeCallback!=null){
+            stateChangeCallback.onStateChangeClick(status);
+        }
+    }
+    private StateChangeCallback stateChangeCallback;
+
+    public void setStateChangeCallback(StateChangeCallback stateChangeCallback) {
+        this.stateChangeCallback = stateChangeCallback;
+    }
+
+    interface StateChangeCallback{
+        void onStateChangeClick(int newstate);
     }
 
     @Override
